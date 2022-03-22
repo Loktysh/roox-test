@@ -1,0 +1,36 @@
+.card-container {
+  width: 420px;
+  height: 73px;
+  left: 0px;
+  top: 2px;
+  background: #F3F3F3;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.card-row {
+  display: flex;
+  column-gap: 7px;
+}
+
+.card-text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+  margin-bottom: 7px;
+}
+
+.card-text.primary-text {
+  color: #000000;
+}
+
+.card-text.secondary-text {
+  color: #A3A3A3;
+}
+
+.card-text.btn-text {
+  color: #4B51EF;
+}
