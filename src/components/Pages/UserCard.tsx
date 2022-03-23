@@ -7,14 +7,12 @@ import './UserCard.css';
 // }
 
 const UserCard = (props: any) => {
-  console.log(props);
   const {
     id,
     name,
     address: { city },
     company: { name: companyName },
   } = props;
-  // const { street, city, zipcode } = props.userData.address;
   return (
     <>
       <div className='card-container'>

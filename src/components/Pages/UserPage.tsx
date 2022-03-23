@@ -8,7 +8,6 @@ const UserForm = (props: any) => {
 };
 const UserPage = (props: any) => {
   const { id } = useParams();
-  console.log(id);
   const [userData, setUserData] = useState([]);
   const getUsers = async () => {
     await fetchUsers().then(setUserData);
