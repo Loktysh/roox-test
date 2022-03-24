@@ -8,6 +8,12 @@
   padding: 10px;
 }
 
+.card-container a {
+  position: relative;
+  right: -80%;
+  bottom: 25px;
+}
+
 .card-row {
   display: flex;
   column-gap: 7px;

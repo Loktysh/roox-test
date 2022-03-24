@@ -8,8 +8,12 @@ function Layout() {
     <main>
       <nav>
         <h1>Сортировка</h1>
-        <Link to='/users?sort=city'>по городу</Link>
-        <Link to='/users?sort=name'>по компании</Link>
+        <button className='btn-primary'>
+          <Link to='/users?sort=city'>по городу</Link>
+        </button>
+        <button className='btn-primary'>
+          <Link to='/users?sort=name'>по компании</Link>
+        </button>
       </nav>
       <Outlet />
     </main>

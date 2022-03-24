@@ -27,8 +27,8 @@ const UserCard = (props: any) => {
         <div className='card-row'>
           <p className='card-text secondary-text'>компания:</p>
           <p className='card-text primary-text'>{companyName}</p>
-          <Link to={id.toString()}>Подробнее</Link>
         </div>
+        <Link to={id.toString()}>Подробнее</Link>
       </div>
     </>
   );

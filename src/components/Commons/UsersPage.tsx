@@ -23,9 +23,7 @@ function UsersPage() {
 
   useEffect(() => {
     setLoading(true);
-    setTimeout(() => {
-      getUsers();
-    }, 1500);
+    getUsers();
     return searchParams.get('sort');
   }, [getUsers, searchParams]);
 

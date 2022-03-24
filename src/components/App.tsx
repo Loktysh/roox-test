@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
-import Layout from './Pages/Layout';
-import NotFoundPage from './Pages/NotFoundPage';
-import UserPage from './Pages/UserPage';
-import UsersPage from './Pages/UsersPage';
+import Layout from './Commons/Layout';
+import NotFoundPage from './Commons/NotFoundPage';
+import UserPage from './Commons/UserPage';
+import UsersPage from './Commons/UsersPage';
 import './App.css';
 import 'antd/dist/antd.css';
 

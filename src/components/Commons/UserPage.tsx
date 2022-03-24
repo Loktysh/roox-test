@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchUsers } from '../../utils';
+import UserForm from './UserForm';
 import './UserCard.css';
-const UserForm = (props: any) => {
-  console.log(props);
-  return <div className='user-container'>123</div>;
-};
+import User from '../User/User';
+
 const UserPage = (props: any) => {
   const { id } = useParams();
   const [userData, setUserData] = useState([]);
@@ -16,7 +15,7 @@ const UserPage = (props: any) => {
   useEffect(() => {
     getUsers();
   }, []);
-  return <UserForm data={userData[id - 1]} />;
+  return !userData.length ? `<h1>'Loading...'</h1>` : <UserForm data={userData[id - 1]} />;
 };
 
 export default UserPage;
