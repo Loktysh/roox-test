@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './Commons/Layout';
 import NotFoundPage from './Commons/NotFoundPage';
 import UserPage from './Commons/UserPage';
@@ -10,7 +10,7 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<Layout />}>
-        <Route index element={<UsersPage />} />
+        <Route index element={<Navigate to='users?sort=city' />} />
         <Route path='users' element={<UsersPage />} />
         <Route path='users/:id' element={<UserPage />} />
         <Route path='*' element={<NotFoundPage />} />

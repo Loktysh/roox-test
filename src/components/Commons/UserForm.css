@@ -27,6 +27,19 @@ input[type='email'] {
   margin-bottom: 10px;
 }
 
+input[type='text']:invalid,
+input[type='tel']:invalid,
+input[type='email']:invalid,
+textarea:invalid {
+  border: 1px solid #D91313;
+  --webkit-appearance: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
 textarea {
   background: #FFFFFF;
   border: 1px solid #D8D8D8;

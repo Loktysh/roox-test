@@ -1,6 +1,5 @@
 import { Outlet, Link, useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-
 import './Layout.css';
 
 function Layout() {
@@ -12,7 +11,7 @@ function Layout() {
           <Link to='/users?sort=city'>по городу</Link>
         </button>
         <button className='btn-primary'>
-          <Link to='/users?sort=name'>по компании</Link>
+          <Link to='/users?sort=name'>по имени</Link>
         </button>
       </nav>
       <Outlet />

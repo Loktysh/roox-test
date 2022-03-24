@@ -7,13 +7,24 @@ const fetchUsers = async () => {
 
 const sortUsers = (users, sortBy) => {
   return users.sort((a, b) => {
-    if (a[sortBy] < b[sortBy]) {
-      return -1;
+    if (sortBy === 'name') {
+      if (a[sortBy] < b[sortBy]) {
+        return -1;
+      }
+      if (a[sortBy] > b[sortBy]) {
+        return 1;
+      }
+      return 0;
     }
-    if (a[sortBy] > b[sortBy]) {
-      return 1;
+    if (sortBy === 'city') {
+      if (a['address'][sortBy] < b['address'][sortBy]) {
+        return -1;
+      }
+      if (a[sortBy] > b[sortBy]) {
+        return 1;
+      }
+      return 0;
     }
-    return 0;
   });
 };
 

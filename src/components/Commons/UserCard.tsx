@@ -1,10 +1,5 @@
-import { FunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
 import './UserCard.css';
-
-// interface UserCardProps {
-//   FunctionComponent<UserCardProps>
-// }
 
 const UserCard = (props: any) => {
   const {

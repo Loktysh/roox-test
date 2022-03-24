@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchUsers } from '../../utils';
+import { Spin } from 'antd';
 import UserForm from './UserForm';
 import './UserCard.css';
-import User from '../User/User';
 
 const UserPage = (props: any) => {
   const { id } = useParams();
@@ -15,7 +15,7 @@ const UserPage = (props: any) => {
   useEffect(() => {
     getUsers();
   }, []);
-  return !userData.length ? `<h1>'Loading...'</h1>` : <UserForm data={userData[id - 1]} />;
+  return !userData.length ? <Spin size='large' /> : <UserForm data={userData[id - 1]} />;
 };
 
 export default UserPage;
