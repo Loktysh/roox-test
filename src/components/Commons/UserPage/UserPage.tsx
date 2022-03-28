@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchUsers } from '../../utils';
+import { fetchUsers } from '../../../utils';
 import { Spin } from 'antd';
-import UserForm from './UserForm';
-import './UserCard.css';
+import NotFoundPage from '../NotFoundPage';
+import UserForm from '../UserForm/UserForm';
+import '../UserCard/UserCard.css';
 
 const UserPage = (props: any) => {
   const { id } = useParams();
@@ -15,7 +16,13 @@ const UserPage = (props: any) => {
   useEffect(() => {
     getUsers();
   }, []);
-  return !userData.length ? <Spin size='large' /> : <UserForm data={userData[id - 1]} />;
+  if (!userData.length) {
+    return <Spin size='large' />;
+  }
+  if (id !== undefined) {
+    return parseInt(id) >= 0 ? <UserForm {...userData[parseInt(id) - 1]} /> : <NotFoundPage />;
+  }
+  return <NotFoundPage />;
 };
 
 export default UserPage;

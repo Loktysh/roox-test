@@ -1,8 +1,9 @@
 import { useForm } from 'react-hook-form';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './UserForm.css';
+import { IUserFormProps, IUserSubmitData } from './UserForm.types';
 
-const UserForm = (props: any) => {
+const UserForm = (props: IUserFormProps) => {
   const {
     name,
     username,
@@ -12,14 +13,14 @@ const UserForm = (props: any) => {
     address: { zipcode },
     phone,
     website,
-  } = props.data;
+  } = props;
   const [disabled, setDisabled] = useState(true);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({ mode: 'onSubmit', reValidateMode: 'onChange' });
-  const onSubmit = data => {
+  const onSubmit = (data: IUserSubmitData) => {
     console.log(JSON.stringify(data));
   };
   return (
@@ -39,7 +40,7 @@ const UserForm = (props: any) => {
         <p>Name</p>
         <input
           type={'text'}
-          disabled={disabled ? true : false}
+          disabled={disabled}
           required
           {...register('name', { value: name, required: true, minLength: 1 })}
         />
@@ -47,7 +48,7 @@ const UserForm = (props: any) => {
         <p>User name</p>
         <input
           type={'text'}
-          disabled={disabled ? true : false}
+          disabled={disabled}
           required
           {...register('username', { value: username, required: true, minLength: 1 })}
         />
@@ -55,15 +56,15 @@ const UserForm = (props: any) => {
         <p>E-mail</p>
         <input
           type={'email'}
-          disabled={disabled ? true : false}
+          disabled={disabled}
           required
-          {...register('email', { value: email, required: '123123123' })}
+          {...register('email', { value: email, required: true })}
         />
         {errors.email && <p>This field is required</p>}
         <p>Street</p>
         <input
           type={'text'}
-          disabled={disabled ? true : false}
+          disabled={disabled}
           required
           {...register('street', { value: street, required: true })}
         />
@@ -71,7 +72,7 @@ const UserForm = (props: any) => {
         <p>City</p>
         <input
           type={'text'}
-          disabled={disabled ? true : false}
+          disabled={disabled}
           required
           {...register('city', { value: city, required: true })}
         />
@@ -79,7 +80,7 @@ const UserForm = (props: any) => {
         <p>Zip code</p>
         <input
           type={'text'}
-          disabled={disabled ? true : false}
+          disabled={disabled}
           required
           {...register('zipcode', { value: zipcode, required: true })}
         />
@@ -87,7 +88,7 @@ const UserForm = (props: any) => {
         <p>Phone</p>
         <input
           type={'tel'}
-          disabled={disabled ? true : false}
+          disabled={disabled}
           required
           {...register('phone', { value: phone, required: true })}
         />
@@ -95,19 +96,15 @@ const UserForm = (props: any) => {
         <p>Website</p>
         <input
           type={'text'}
-          disabled={disabled ? true : false}
+          disabled={disabled}
           required
           {...register('website', { value: website, required: true })}
         />
         {errors.website && <p>This field is required</p>}
         <p>Comment</p>
-        <textarea disabled={disabled ? true : false} {...register('comment')} />
+        <textarea disabled={disabled} {...register('comment')} />
         {errors.comment && <p>This field is required</p>}
-        <input
-          className='btn-primary btn-primary-submit'
-          disabled={disabled ? true : false}
-          type='submit'
-        />
+        <input className='btn-primary btn-primary-submit' disabled={disabled} type='submit' />
       </form>
     </div>
   );

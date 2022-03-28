@@ -1,12 +1,11 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Layout from './Commons/Layout';
+import Layout from './Commons/Layout/Layout';
 import NotFoundPage from './Commons/NotFoundPage';
-import UserPage from './Commons/UserPage';
-import UsersPage from './Commons/UsersPage';
-import './App.css';
+import UserPage from './Commons/UserPage/UserPage';
+import UsersPage from './Commons/UsersPage/UsersPage';
 import 'antd/dist/antd.css';
 
-function App() {
+export const App: React.FC = () => {
   return (
     <Routes>
       <Route path='/' element={<Layout />}>
@@ -17,6 +16,4 @@ function App() {
       </Route>
     </Routes>
   );
-}
-
-export default App;
+};

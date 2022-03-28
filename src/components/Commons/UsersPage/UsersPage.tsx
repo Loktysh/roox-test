@@ -1,11 +1,8 @@
 import { useEffect, useState, useCallback } from 'react';
-import { Outlet, Link } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
-import { fetchUsers, sortUsers } from '../../utils';
-import NotFoundPage from './NotFoundPage';
-import Favourite from '../favourite';
+import { fetchUsers, sortUsers } from '../../../utils';
 import { Spin } from 'antd';
-import UserCard from './UserCard';
+import UserCard from '../UserCard/UserCard';
 import './UsersPage.css';
 
 function UsersPage() {

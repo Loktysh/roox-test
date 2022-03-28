@@ -6,7 +6,6 @@ form {
 }
 
 form p {
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -67,7 +66,6 @@ textarea:disabled {
 }
 
 .user-from-header h1 {
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
